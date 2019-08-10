@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow Function with this keyword</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        var person = {
+            first: "Dhaval",
+            activities: ["Kayak", "Biking", "Running"],
+            PrintActivities(){
+                // Way 2: store current this to variable and access to next child scope
+                //var _this = this; //Way 2
+                this.activities.forEach(function (activity){
+                    //Way 1. "this" not getting reference to person object, instead Getting current foreach function object
+                    //console.log(`${this.first} like ${activity}`); // Error: First is not defined 
+
+                    //Way 2: replace this with variable _this
+                    //console.log(`${_this.first} like ${activity}`); //Way 2:  works
+
+                    //Way 3 : Using .bind() method to bind the object to for each loop and pass the values and props
+                    console.log(`${this.first} like ${activity}`); // Way 3 : works bind method to bind this to foreach
+                }.bind(this));
+            }
+        }
+        person.PrintActivities();
+
+        // Using Arrow function and no need any other extenal method or variable
+        console.log("------------ Using Arrow funtion-----------");
+        var people = {
+            first: "Dhaval",
+            activities: ["Kayak", "Biking", "Running"],
+            PrintActivities(){
+                this.activities.forEach(activity => {
+                    console.log(`${this.first} like ${activity}`);
+                });
+            }
+        }
+        people.PrintActivities();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

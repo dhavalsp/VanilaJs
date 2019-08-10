@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Literals</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+    //Try to repeat the string as per number enter in times argument.
+    // We have to do it +1 bcz of the array index count start from 0.
+    var cat = {
+        meow: function (times) {
+            console.log(Array(times + 1).join("meow | "));
+        },
+        purr: function (times) {
+            console.log(Array(times +1 ).join("purr | "));
+        },
+        snore: function (times) {
+            console.log(Array(times +1 ).join("snore | "));
+            
+        }
+    };
+    cat.meow(2);
+    cat.purr(3);
+    cat.snore(5);
+
+    //Doing the same thing using ES6 sysntax and features
+    console.log("---------Using ES6--------");
+    var cat = {
+        meow(times) {
+            console.log(("meow | ").repeat(times));
+        },
+        purr(times) {
+            console.log(("purr | ").repeat(times));
+        },
+        snore(times) {
+            console.log(("snore | ").repeat(times));
+        }
+    };
+    cat.meow(2);
+    cat.purr(3);
+    cat.snore(5);
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

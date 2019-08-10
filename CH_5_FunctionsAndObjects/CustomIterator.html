@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Iterator using Symbol</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+    // Using Symbol(), we can create custom iterator
+    // Iterable Protocol is way to customize iteration behavior
+    let title = "Javascript";
+    
+    //Using Symbol.iterator, we can get the iterator of any collection. it's kind of function
+    console.log(typeof(title[Symbol.iterator])) // function 
+
+    var iterateIt = title[Symbol.iterator]();
+    console.log(iterateIt.next());   //{value: "J", done: false}
+    console.log(iterateIt.next());   //{value: "a", done: false}
+    console.log(iterateIt.next());   //{value: "v", done: false}
+    console.log(iterateIt.next());   //{value: "a", done: false}
+    console.log(iterateIt.next());   //{value: "s", done: false}
+    console.log(iterateIt.next());   //{value: "c", done: false}
+    console.log(iterateIt.next());   //{value: "r", done: false}
+    console.log(iterateIt.next());   //{value: "i", done: false}
+    console.log(iterateIt.next());   //{value: "p", done: false}
+    console.log(iterateIt.next());   //{value: "t", done: false}
+    console.log(iterateIt.next());   //{value: undefined, done: true}
+
+
+    function MyIterator(arr) {
+        let nextIndex = 0;
+        return {
+            next(){
+                if(nextIndex < arr.length){
+                    return {value:arr.shift(), done:false}
+                }
+                else {
+                    return {done:true}
+                }
+            }
+        }
+    }
+
+    var vehicleMaker = ["Honda", "Toyota", "BMW", "Chevy", "Ford"];
+    var iterateList = MyIterator(vehicleMaker);
+    console.log(iterateList.next().value);
+    console.log(iterateList.next().value);
+    console.log(iterateList.next().value);
+    console.log(iterateList.next().value);
+    console.log(iterateList.next().value);
+    console.log(iterateList.next().done);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

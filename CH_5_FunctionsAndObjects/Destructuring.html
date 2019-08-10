@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructuring Assignment</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+
+    //DeStructring for the Array
+        var activities = ["Cycling", "Kayak", "Hiking", "Running"]
+        // Way 1 to get values 
+        var first = activities[0];
+        var third  = activities[2];
+        console.log( first ); // Cycling
+        console.log(third); // Hiking
+
+
+         // ES6 new way to Destructring the array
+
+         // First Wrong mistake
+         // Here variable map with the index not by the name. 
+         // so third would be pointing to second value by the position
+         var [first,third] = activities ; // Wrong 
+         console.log(first); // Cycling
+         console.log( "Wrong: "  +third); // Kayak // WRONG Answer
+
+         // Right way
+        var [first,,third,] = activities;
+        console.log(first); // Cycling
+         console.log(third); // Hiking // RIGHT Answer
+
+    // Destructring for the Object
+        var vacation = {
+            destination: "Hawai",
+            travelers : 2,
+            activity: "skiing",
+            cost: 4000
+        };
+        // Here argument the map with the object by its same name of the properties 
+        function PrintActivity({destination, activity}) {
+            console.log(`Dhaval wants to do ${activity} at ${destination}`);
+        }
+        // we pass the object
+        PrintActivity(vacation); 
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

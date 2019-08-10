@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generators</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<!-- for Generators this library is required in babel to support as ES5 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+	
+	<script type="text/babel">
+
+		function* EachItem(arr){
+			for (let i = 0; i < arr.length; i++) {
+				yield arr[i];
+			}
+		}
+
+		var nums = EachItem([1,2,3,4,5,6,7,8,9,10]);
+		
+		var print = setInterval(() => {
+			let num  = nums.next();
+			if(num.done){
+				clearInterval(print);
+				console.log("It's Done");
+			}
+			else{
+				console.log(num.value);
+			}
+		}, 500);
+
+
+	</script>
+
+</head>
+<body>
+</body>	
+</html>
+
+
+
+
+
+
+
+

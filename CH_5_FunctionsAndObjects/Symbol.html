@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Symbols</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        // Symbols is the new Primitive types
+        // Symbols is created by "new Symbol()" using the factory function
+        // Symbols is often used as unique ID's
+        // Symbols also used to create customize iterator behavior
+
+        const id = Symbol(); // here Symbol() is factory function, 
+                                // which function create the thing is called
+                                // FActory funcion  
+        const courseInfo = {
+            title : "Vanila JS",
+            topics : ["Sysbols" , "Maps", "Generator","functions"],
+            id: 789 // If we add same name propety in object
+        };
+        courseInfo[id] = 123456;
+        console.log(courseInfo[id]); // it's refer to Symbol object id
+        console.log(courseInfo['id']); // it's refer to property 'id'
+        console.log(courseInfo); // id will ne display as Symbol():123456 in object
+                                    // Same name property would not conflict with the
+                                    // Symbols bcz it's by Sysmbols not string name
+
+        // Multiple symbol could be there
+        const test = Symbol();
+        courseInfo[test] = 'abcd';
+        console.log(courseInfo); // you will see the multiple Symbol
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
