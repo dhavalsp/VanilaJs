@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sets</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+    //Sets : Collection of values
+    // They can be any type
+    //Each value  MUST be UNIQUE. 
+
+    var books = new Set();
+    books.add('Maths');
+    books.add('Science').add('English'); // you add multiple add function like this
+    
+    console.log('books set size: ' + books.size); // 3
+    console.log('Type of set object: '+typeof(books)); // object
+    console.log('Does it have Maths books?? ' + books.has('Maths')); //true
+    books.delete('Maths');
+    console.log(books.size); // 2 - Math is deleted
+
+    // Check unique data demo
+    var arrayNum = [1,2,3,1,2,3,1,2,3];
+    let Uniquenum = new Set(arrayNum);
+    console.log('Array size: ' + arrayNum.length); // 9
+    console.log('Set Size: '+ Uniquenum.size); // 3
+    console.log(Uniquenum);// 1,2,3
+    Uniquenum.add(1)
+    console.log(Uniquenum); // same : 1,2,3
+
+
+
+
+
+            
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

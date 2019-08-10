@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For loops</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+
+        // lop works over the string and return the each char value in let variable.
+        for(let letter of 'Javascript')
+        {
+            console.log(letter);
+        }
+
+        //Iterate over the Array 
+        var topics = ['Javascript', 'React','Angular','Node'];
+        for(let topic of topics)
+        {
+            console.log(topic);
+        }
+
+        // Iterate over the Map objects to get key value pair
+        var topics = new Map();
+        topics.set('HTML','/class/html');
+        topics.set('CSS','/class/css');
+        topics.set('JS','/class/js');
+
+        
+        //for(let topic of topics) 
+        for(let topic of topics.entries()) // Both are work as same
+        {
+            console.log(topic);
+            console.log(topic[0] + "=" + topic[1]);
+        }
+        // Iterate over only keys
+        for(let topic of topics.keys())
+        {
+            console.log(topic);
+        }
+        // Iterate over only Values
+        for(let topic of topics.values())
+        {
+            console.log(topic);
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

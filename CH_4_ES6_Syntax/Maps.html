@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maps- Key value pair</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+    // Why Map()? over object
+    // Map is Array of array key value pair
+    // Map key could be Array, number, function, string, obj, etc
+    // Iterate in order 
+    
+    var course = new Map();
+    course.set('Apple',{color: 'red'});
+    course.set('Grapes',{color:'green'});
+
+    console.log(course);//Map(2) {"Apple" => {…}, "Grapes" => {…}} // return map object => Map is Array of (array with key value pair) 
+    console.log(course.Apple); // undefined
+    console.log(course.get('Apple'));//{color: "red"} // return javascript object with color property and value 'green'
+
+    var details = new Map([
+        [new Date(),'today'],
+        ['items', [1,2,3,4]]
+    ]);
+
+    console.log(details.size); // 2
+    details.forEach(function(item,key){
+        console.log(key + "="+item);
+
+    });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
