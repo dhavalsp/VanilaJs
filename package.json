@@ -1,0 +1,33 @@
+{
+  "name": "es6-webpack",
+  "version": "1.0.0",
+  "description": "Vanila Js (ES6)\r Here I have tried to cover the ES6 step by step.",
+  "main": "script.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhavalsp/VanilaJs.git"
+  },
+  "keywords": [
+    "webpack",
+    "es6"
+  ],
+  "author": "Dhaval Patel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dhavalsp/VanilaJs/issues"
+  },
+  "homepage": "https://github.com/dhavalsp/VanilaJs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "http-server": "^0.11.1",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {}
+}
