@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async</title>
+    <script>
+        // babel is not suppoting the async functionalities
+        // good thing is most modern browser support without any external library
+
+        const delays = seconds =>{
+            return new Promise(
+                resolve => setTimeout(resolve, seconds * 1000)
+            )
+        };
+
+        const printSeconds = async() =>{
+            console.log("Start");
+            await delays(2);
+            console.log("It was 2 sec"); // print after 2 sec
+            await delays(4);
+            console.log("It was 4 sec"); // print after 4 sec
+        };
+        printSeconds();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        // https://www.geeksforgeeks.org/javascript-promises/
+        // A promise is an object that may produce a single value some time 
+        //in the future : either a resolved value, or a reason that 
+        //it's not resolved (e.g., a network error occurred). 
+        //A promise may be in one of 
+        //3 possible states: fulfilled, rejected, or pending.(medium.com)
+
+        const delay = seconds => {
+            return new Promise((resolve, reject) => {
+                if(typeof seconds !== 'number')
+                {
+                    reject(new Error('Argument seconds must be number'));
+                }
+                setTimeout(() => {
+                    return resolve(`${seconds} second delay is up`);
+                }, seconds * 1000);
+            });
+        };
+
+        delay(3).then((msg)=> console.log(msg));
+        delay(1).then(msg => msg.toUpperCase())
+                .then(msg => `${msg} !!!!!`)
+                .then((msg)=> console.log(msg))
+                .catch(err => console.erro(err));
+        delay("3 min")
+                .then((msg)=> console.log(msg))
+                .catch(err => console.error(err.message)); //Throw error
+         
+        // AS we see then function works like the assembly going on. 
+        //One will complete the it will pass the data to next then function. 
+        //You can catch the erro using the catch function.
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

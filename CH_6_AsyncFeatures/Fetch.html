@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        const getPeopleInSpace = () => 
+                    fetch('http://api.open-notify.org/astros.json')
+                        .then(res => res.json()); // get in json
+        
+        const spaceNames = () =>
+                    getPeopleInSpace()
+                        .then(json => json.people) // get people object
+                        .then(people => people.map(p=>p.name)) // get all name property as collection(array)
+                        .then(names => names.join(', ')); // join by the ',' 
+        
+        
+        spaceNames().then(console.log);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

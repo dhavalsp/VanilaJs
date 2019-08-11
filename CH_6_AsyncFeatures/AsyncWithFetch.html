@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async with Fetch</title>
+    <script>
+        (async (loginName) => {
+            try {
+                // without await process will not wait for the response from fetch.
+                // you will get undefined response in next line.
+                var response = await fetch(`https://api.github.com/users/${loginName}/followers`);
+                var json = await response.json(); // try to run without await
+                var followerList = json.map(user => user.login);
+                console.log(followerList);
+            } catch (err) {
+                console.log("Data didn't load", err);
+            }
+    })('Dhavalsp'); // Result would be empty 😊, You can try your github name or some well known one
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
