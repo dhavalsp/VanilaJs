@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Getter and Setter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        var activities = {
+            _list : [],
+            set addActivity(activity){
+                this._list.push(activity);
+            },
+            get getActivities(){
+                return this._list.join(', ');
+            }
+        }
+        // setter syntax looks like fucntion but assign value as property
+        // getter and setter are not function. 
+        activities.addActivity = 'Biking';
+        activities.addActivity = 'Kayak';
+        activities.addActivity = 'Rope climbing'; 
+
+        console.log(activities.getActivities); // Biking, Kayak, Rope climbing
+        
+        // Getter and Setter with the Class
+        console.log('========= Class =========');
+        class Hike{
+            constructor(distance, pace){
+                this.distance = distance;
+                this.pace = pace;
+            }
+            get lengthHours(){
+                return `${this.calcLength()} hours`;
+            }
+            calcLength(){
+                return this.distance / this.pace;
+            }
+        }
+        const mtTallac = new Hike(10,2);
+        console.log(mtTallac.lengthHours);
+
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

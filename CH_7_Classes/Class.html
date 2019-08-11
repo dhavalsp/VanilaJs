@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        class vehicle {
+            // constructor
+            constructor(name, year){
+                this.year=year; 
+                this.name = name;
+            }
+            printVehicle(){
+                console.log(`vehicle: ${this.name} ${this.year} `);
+            }
+        }
+        const vehicleObj =  new vehicle('Honda Accord', 2019);
+        vehicleObj.printVehicle();
+
+        class SUV extends vehicle{
+            constructor(name,year)
+            {
+                super(name,year);
+            }
+        }
+        var SUVdetail = new SUV('Ford Explorer', 2019);
+        SUVdetail.printVehicle();
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
